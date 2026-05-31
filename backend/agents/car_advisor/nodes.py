@@ -1,11 +1,12 @@
 import json
+import os
 import httpx
 from datetime import datetime, timezone
 
 from langchain_openai import AzureChatOpenAI
 
 from .state import AgentState, CarRecommendation, UserPreferences
-from .prompts import EXTRACT_CARS_PROMPT, REASONING_PROMPT
+from .prompts import EXTRACT_CARS_PROMPT, FETCH_SPECS_PROMPT, REASONING_PROMPT
 
 
 def _now_iso() -> str:
@@ -115,6 +116,176 @@ async def search_web(state: AgentState) -> AgentState:
         f"Retrieved {len(all_results)} results across {len(queries)} queries"
     ))
     return {**state, "search_results": all_results, "trace": trace}
+
+
+_LOCAL_CARS: list[dict] | None = None
+
+
+def _load_local_cars() -> list[dict]:
+    global _LOCAL_CARS
+    if _LOCAL_CARS is None:
+        data_path = os.path.join(os.path.dirname(__file__), "..", "..", "data", "cars.json")
+        try:
+            with open(os.path.normpath(data_path), encoding="utf-8") as f:
+                _LOCAL_CARS = json.load(f)
+        except Exception:
+            _LOCAL_CARS = []
+    return _LOCAL_CARS
+
+
+def _find_local_match(make: str, model: str, local_cars: list[dict]) -> dict | None:
+    """Fuzzy match by make+model (case-insensitive substring)."""
+    make_l = make.lower().strip()
+    model_l = model.lower().strip()
+    for car in local_cars:
+        lm = car.get("make", "").lower()
+        lmod = car.get("model", "").lower()
+        if make_l in lm or lm in make_l:
+            if model_l in lmod or lmod in model_l:
+                return car
+    return None
+
+
+async def fetch_car_specs(state: AgentState) -> AgentState:
+    """For each car candidate, run a targeted spec search and fill in null spec fields."""
+    import asyncio
+    from config import settings
+
+    candidates: list[dict] = state.get("car_candidates", [])
+    if not candidates:
+        return state
+
+    if not settings.SERPER_API_KEY:
+        trace = list(state.get("trace", []))
+        trace.append(_trace_entry("fetch_car_specs", "done", "Skipped — no SERPER_API_KEY configured"))
+        return {**state, "trace": trace}
+
+    prefs: UserPreferences = state["preferences"]
+    meta = COUNTRY_META.get(prefs.country, COUNTRY_META["IN"])
+    SPEC_FIELDS = ["mileage_kmpl", "power_bhp", "seating_capacity", "safety_rating_stars", "range_km"]
+
+    # Only search for cars that are still missing at least one spec
+    needs_search = [c for c in candidates if any(c.get(f) is None for f in SPEC_FIELDS)]
+
+    if not needs_search:
+        trace = list(state.get("trace", []))
+        trace.append(_trace_entry("fetch_car_specs", "done", "All specs already populated from extraction"))
+        return {**state, "trace": trace}
+
+    async def search_one(car: dict) -> tuple[str, list[dict]]:
+        make = car.get("make", "")
+        model = car.get("model", "")
+        year = car.get("year", 2025)
+        query = f"{year} {make} {model} specs mileage kmpl power bhp safety rating NCAP {meta['name']}"
+        try:
+            async with httpx.AsyncClient(timeout=10.0) as client:
+                resp = await client.post(
+                    "https://google.serper.dev/search",
+                    headers={"X-API-KEY": settings.SERPER_API_KEY, "Content-Type": "application/json"},
+                    json={"q": query, "num": 5, "gl": meta["gl"], "hl": "en"},
+                )
+                resp.raise_for_status()
+                data = resp.json()
+                results = [
+                    {"title": r.get("title", ""), "snippet": r.get("snippet", "")}
+                    for r in data.get("organic", [])
+                ]
+                ab = data.get("answerBox")
+                if ab:
+                    results.insert(0, {
+                        "title": ab.get("title", "Featured"),
+                        "snippet": ab.get("answer", ab.get("snippet", "")),
+                    })
+                return car.get("car_id", ""), results
+        except Exception as e:
+            return car.get("car_id", ""), [{"title": "error", "snippet": str(e)}]
+
+    # Run all spec searches in parallel
+    gathered = await asyncio.gather(*[search_one(c) for c in needs_search])
+    results_map: dict[str, list[dict]] = {car_id: snippets for car_id, snippets in gathered}
+
+    # Build a single batched prompt for GPT
+    spec_snippets_text = ""
+    for car in needs_search:
+        car_id = car.get("car_id", "")
+        snippets = results_map.get(car_id, [])
+        if not snippets or snippets[0].get("title") == "error":
+            continue
+        spec_snippets_text += f"\n=== {car.get('make')} {car.get('model')} {car.get('year')} (car_id: {car_id}) ===\n"
+        for s in snippets[:5]:
+            spec_snippets_text += f"  [{s['title']}] {s['snippet']}\n"
+
+    specs_updates: dict[str, dict] = {}
+    if spec_snippets_text.strip():
+        llm = AzureChatOpenAI(
+            azure_endpoint=settings.AZURE_OPENAI_ENDPOINT,
+            api_key=settings.AZURE_OPENAI_API_KEY,
+            azure_deployment=settings.AZURE_OPENAI_DEPLOYMENT_NAME,
+            api_version=settings.AZURE_OPENAI_API_VERSION,
+            temperature=0.0,
+            max_tokens=1500,
+        )
+        chain = FETCH_SPECS_PROMPT | llm
+        response = chain.invoke({"spec_snippets": spec_snippets_text})
+        raw = response.content.strip()
+        if raw.startswith("```"):
+            raw = raw.split("```")[1]
+            if raw.startswith("json"):
+                raw = raw[4:]
+            raw = raw.strip()
+        try:
+            specs_updates = json.loads(raw)
+        except json.JSONDecodeError:
+            specs_updates = {}
+
+    # Apply fetched specs to candidates (only fill nulls)
+    enriched = []
+    filled_count = 0
+    for car in candidates:
+        car_id = car.get("car_id", "")
+        update = specs_updates.get(car_id, {})
+        if update:
+            changed = False
+            for field in SPEC_FIELDS:
+                if car.get(field) is None and update.get(field) is not None:
+                    car = {**car, field: update[field]}
+                    changed = True
+            if changed:
+                filled_count += 1
+        enriched.append(car)
+
+    trace = list(state.get("trace", []))
+    trace.append(_trace_entry(
+        "fetch_car_specs", "done",
+        f"Web-fetched specs for {filled_count}/{len(needs_search)} cars via targeted search"
+    ))
+    return {**state, "car_candidates": enriched, "trace": trace}
+
+
+def enrich_from_local(state: AgentState) -> AgentState:    """Fill null specs on extracted candidates using local cars.json data."""
+    candidates: list[dict] = state.get("car_candidates", [])
+    if not candidates:
+        return state
+
+    local_cars = _load_local_cars()
+    SPEC_FIELDS = ["mileage_kmpl", "power_bhp", "seating_capacity", "safety_rating_stars", "range_km"]
+
+    enriched = []
+    for car in candidates:
+        match = _find_local_match(car.get("make", ""), car.get("model", ""), local_cars)
+        if match:
+            for field in SPEC_FIELDS:
+                if car.get(field) is None and match.get(field) is not None:
+                    car = {**car, field: match[field]}
+        enriched.append(car)
+
+    trace = list(state.get("trace", []))
+    matched = sum(
+        1 for c in enriched
+        if _find_local_match(c.get("make", ""), c.get("model", ""), local_cars) is not None
+    )
+    trace.append(_trace_entry("enrich_from_local", "done", f"Enriched specs for {matched}/{len(enriched)} cars from local DB"))
+    return {**state, "car_candidates": enriched, "trace": trace}
 
 
 async def extract_cars(state: AgentState) -> AgentState:

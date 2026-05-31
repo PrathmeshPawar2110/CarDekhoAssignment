@@ -44,6 +44,31 @@ Rules:
 Return ONLY the JSON array."""),
 ])
 
+# ── Prompt 1b: Extract specs from targeted per-car search snippets ───────────
+
+FETCH_SPECS_PROMPT = ChatPromptTemplate.from_messages([
+    ("system", "You are a car specification extractor. Extract numeric specs strictly from the provided snippets. Return ONLY valid JSON, no markdown."),
+    ("human", """Each section below contains web search results for a specific car.
+Extract the available technical specs for each car.
+
+{spec_snippets}
+
+Return a single JSON object where each key is the car_id and the value contains only the fields you could find (omit fields not found in snippets):
+- mileage_kmpl: number (fuel efficiency km/l — for petrol/diesel/hybrid/cng cars)
+- range_km: number (range in km — for electric vehicles only)
+- power_bhp: number (engine power in bhp or ps)
+- seating_capacity: integer
+- safety_rating_stars: number (NCAP / ASEAN NCAP / NHTSA star rating)
+
+Example output:
+{{
+  "toyota-innova-2025": {{"mileage_kmpl": 15.1, "power_bhp": 174, "seating_capacity": 7, "safety_rating_stars": null}},
+  "hyundai-creta-2025": {{"mileage_kmpl": 17.4, "power_bhp": 115, "seating_capacity": 5, "safety_rating_stars": 5}}
+}}
+
+Return ONLY the JSON object. Only include car_ids that appear in the sections above."""),
+])
+
 # ── Prompt 2: Rank and personalize reasoning for top 5 ──────────────────────
 
 REASONING_SYSTEM = """You are an expert car buying advisor who gives highly personalized, \
