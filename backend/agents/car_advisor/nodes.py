@@ -262,7 +262,8 @@ async def fetch_car_specs(state: AgentState) -> AgentState:
     return {**state, "car_candidates": enriched, "trace": trace}
 
 
-def enrich_from_local(state: AgentState) -> AgentState:    """Fill null specs on extracted candidates using local cars.json data."""
+def enrich_from_local(state: AgentState) -> AgentState:
+    """Fill null specs on extracted candidates using local cars.json data."""
     candidates: list[dict] = state.get("car_candidates", [])
     if not candidates:
         return state
