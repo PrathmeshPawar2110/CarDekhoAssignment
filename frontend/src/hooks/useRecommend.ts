@@ -7,6 +7,7 @@ export function useRecommend() {
   const [recommendations, setRecommendations] = useState<CarRecommendation[]>([])
   const [status, setStatus] = useState<RecommendStatus>('idle')
   const [error, setError] = useState<string | null>(null)
+  const [isFallback, setIsFallback] = useState(false)
   const abortRef = useRef<AbortController | null>(null)
 
   const run = useCallback(async (preferences: UserPreferences) => {
@@ -19,6 +20,7 @@ export function useRecommend() {
     setTrace([])
     setRecommendations([])
     setError(null)
+    setIsFallback(false)
 
     const request_id = crypto.randomUUID()
 
@@ -45,6 +47,7 @@ export function useRecommend() {
               })
             } else if (event.type === 'result') {
               setRecommendations(event.recommendations ?? [])
+              setIsFallback(event.is_fallback ?? false)
             } else if (event.type === 'error') {
               setError(event.message)
               setStatus('error')
@@ -69,7 +72,8 @@ export function useRecommend() {
     setTrace([])
     setRecommendations([])
     setError(null)
+    setIsFallback(false)
   }, [])
 
-  return { run, trace, recommendations, status, error, reset }
+  return { run, trace, recommendations, status, error, isFallback, reset }
 }

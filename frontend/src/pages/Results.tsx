@@ -13,7 +13,7 @@ export function Results() {
   const location = useLocation()
   const preferences = location.state?.preferences as UserPreferences | undefined
 
-  const { run, trace, recommendations, status, error } = useRecommend()
+  const { run, trace, recommendations, status, error, isFallback } = useRecommend()
   const { selected, toggle, isSelected, drawerOpen, openDrawer, closeDrawer, canAdd } = useCompare()
   const [tracePanelOpen, setTracePanelOpen] = useState(false)
 
@@ -29,7 +29,7 @@ export function Results() {
   const isLoading = status === 'streaming' || status === 'idle'
 
   return (
-    <div className={cn('min-h-screen bg-gray-50 transition-all duration-300', tracePanelOpen ? 'md:pr-72' : 'pr-0')}>
+    <div className={cn('min-h-screen bg-gray-50 transition-all duration-300', tracePanelOpen ? 'md:pr-72 pb-72 md:pb-0' : 'pr-0')}>
       {/* Header */}
       <header className="bg-white border-b px-4 py-3 sticky top-0 z-30">
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-2">
@@ -97,24 +97,37 @@ export function Results() {
 
         {status === 'done' && recommendations.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-4xl mb-4">😔</p>
-            <h2 className="text-xl font-bold text-gray-800 mb-2">No cars found</h2>
-            <p className="text-gray-500 mb-6">Try widening your budget or changing your fuel preference.</p>
+            <p className="text-4xl mb-4">�</p>
+            <h2 className="text-xl font-bold text-gray-800 mb-2">No matches found</h2>
+            <p className="text-gray-500 mb-6">We couldn’t find cars for your exact criteria. Try widening your budget or changing your fuel preference.</p>
             <button
               onClick={() => navigate('/wizard')}
               className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700"
             >
-              Try Again
+              Adjust Preferences
             </button>
           </div>
         )}
 
         {recommendations.length > 0 && (
           <>
+            {isFallback && (
+              <div className="mb-5 bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 flex items-start gap-3">
+                <span className="text-xl flex-shrink-0">🔍</span>
+                <div>
+                  <p className="font-semibold text-amber-800 text-sm">Couldn’t find an exact match</p>
+                  <p className="text-amber-700 text-sm mt-0.5">These are the closest results we found with a slightly wider budget and flexible fuel type.</p>
+                </div>
+              </div>
+            )}
             <div className="mb-6">
-              <h1 className="text-2xl font-bold text-gray-900">Your Top {recommendations.length} Picks</h1>
+              <h1 className="text-2xl font-bold text-gray-900">
+                {isFallback ? 'Similar Cars You May Like' : `Your Top ${recommendations.length} Picks`}
+              </h1>
               <p className="text-gray-500 mt-1">
-                Personalized by AI based on your preferences · Select up to 3 to compare
+                {isFallback
+                  ? 'Based on relaxed criteria · Select up to 3 to compare'
+                  : 'Personalized by AI based on your preferences · Select up to 3 to compare'}
               </p>
             </div>
 
