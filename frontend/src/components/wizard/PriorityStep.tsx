@@ -46,6 +46,7 @@ function SortableItem({
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
+    touchAction: 'none',
   }
 
   const rankInfo = RANK_LABELS[rank]
