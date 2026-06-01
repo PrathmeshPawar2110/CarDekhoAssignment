@@ -12,10 +12,12 @@ import type { TraceEvent } from '@/types'
 
 const GRAPH_NODE_DEFS = [
   { id: 'parse_preferences', label: 'Parse\nPreferences', y: 0 },
-  { id: 'search_web', label: 'Search\nWeb', y: 110 },
-  { id: 'extract_cars', label: 'Extract\nCars', y: 220 },
-  { id: 'generate_reasoning', label: 'Generate\nReasoning', y: 330 },
-  { id: 'format_response', label: 'Format\nResponse', y: 440 },
+  { id: 'search_web', label: 'Search\nWeb', y: 100 },
+  { id: 'extract_cars', label: 'Extract\nCars', y: 200 },
+  { id: 'fetch_car_specs', label: 'Fetch\nSpecs', y: 300 },
+  { id: 'enrich_from_local', label: 'Enrich\nLocal', y: 400 },
+  { id: 'generate_reasoning', label: 'Generate\nReasoning', y: 500 },
+  { id: 'format_response', label: 'Format\nResponse', y: 600 },
 ]
 
 type NodeStatus = 'idle' | 'running' | 'done' | 'error'
@@ -106,78 +108,120 @@ export function AgentTracePanel({ trace, isOpen, onToggle, streamStatus }: Props
   }))
 
   return (
-    <div
-      className={cn(
-        'fixed top-0 right-0 h-full bg-white border-l border-gray-200 shadow-xl transition-all duration-300 z-40 flex flex-col overflow-hidden',
-        isOpen ? 'w-72' : 'w-0 border-l-0'
-      )}
-    >
-      {/* Toggle button — sits outside the panel width so always visible */}
-      <button
-        onClick={onToggle}
+    <>
+      {/* Desktop: right sidebar */}
+      <div
         className={cn(
-          'fixed top-1/2 -translate-y-1/2 w-8 h-12 bg-white border border-gray-200 rounded-l-xl shadow-md flex items-center justify-center text-gray-500 hover:text-blue-600 transition-all duration-300 z-50',
-          isOpen ? 'right-72' : 'right-0'
+          'hidden md:flex fixed top-0 right-0 h-full bg-white border-l border-gray-200 shadow-xl transition-all duration-300 z-40 flex-col overflow-hidden',
+          isOpen ? 'w-72' : 'w-0 border-l-0'
         )}
-        title={isOpen ? 'Close trace panel' : 'Open agent trace'}
       >
-        <svg
-          className={cn('w-4 h-4 transition-transform duration-300', isOpen ? 'rotate-0' : 'rotate-180')}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+        {/* Desktop toggle button */}
+        <button
+          onClick={onToggle}
+          className={cn(
+            'fixed top-1/2 -translate-y-1/2 w-8 h-12 bg-white border border-gray-200 rounded-l-xl shadow-md hidden md:flex items-center justify-center text-gray-500 hover:text-blue-600 transition-all duration-300 z-50',
+            isOpen ? 'right-72' : 'right-0'
+          )}
+          title={isOpen ? 'Close trace panel' : 'Open agent trace'}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+          <svg
+            className={cn('w-4 h-4 transition-transform duration-300', isOpen ? 'rotate-0' : 'rotate-180')}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
 
-      {isOpen && (
-        <>
-          <div className="p-4 border-b">
-            <h3 className="font-bold text-gray-800 text-sm">🧠 Agent Trace</h3>
-            <p className="text-xs text-gray-400 mt-0.5">LangGraph execution pipeline</p>
-          </div>
-
-          <div className="flex-1 overflow-hidden" style={{ minHeight: 0 }}>
-            <ReactFlow
-              nodes={nodes}
-              edges={edges}
-              nodeTypes={nodeTypes}
-              fitView
-              fitViewOptions={{ padding: 0.3 }}
-              proOptions={{ hideAttribution: true }}
-              panOnDrag={false}
-              zoomOnScroll={false}
-              zoomOnDoubleClick={false}
-              nodesDraggable={false}
-              nodesConnectable={false}
-              elementsSelectable={false}
-            >
-              <Background color="#f1f5f9" gap={20} />
-              <Controls showInteractive={false} />
-            </ReactFlow>
-          </div>
-
-          {/* Trace log */}
-          <div className="border-t p-3 max-h-40 overflow-y-auto space-y-1.5">
-            {trace.length === 0 ? (
-              <p className="text-xs text-gray-400 text-center py-2">
-                {streamStatus === 'idle' ? 'Run a search to see agent steps' : 'Waiting for first node...'}
-              </p>
-            ) : (
-              trace.map((t, i) => (
-                <div key={i} className="flex items-start gap-2 text-xs">
-                  <span className="text-emerald-500 flex-shrink-0 mt-0.5">✓</span>
-                  <div>
-                    <span className="font-medium text-gray-700">{t.node.replace(/_/g, ' ')}</span>
-                    <span className="text-gray-400 ml-1">— {t.detail}</span>
+        {isOpen && (
+          <>
+            <div className="p-4 border-b">
+              <h3 className="font-bold text-gray-800 text-sm">🧠 Agent Trace</h3>
+              <p className="text-xs text-gray-400 mt-0.5">LangGraph execution pipeline</p>
+            </div>
+            <div className="flex-1 overflow-hidden" style={{ minHeight: 0 }}>
+              <ReactFlow
+                nodes={nodes}
+                edges={edges}
+                nodeTypes={nodeTypes}
+                fitView
+                fitViewOptions={{ padding: 0.3 }}
+                proOptions={{ hideAttribution: true }}
+                panOnDrag={false}
+                zoomOnScroll={false}
+                zoomOnDoubleClick={false}
+                nodesDraggable={false}
+                nodesConnectable={false}
+                elementsSelectable={false}
+              >
+                <Background color="#f1f5f9" gap={20} />
+                <Controls showInteractive={false} />
+              </ReactFlow>
+            </div>
+            <div className="border-t p-3 max-h-40 overflow-y-auto space-y-1.5">
+              {trace.length === 0 ? (
+                <p className="text-xs text-gray-400 text-center py-2">
+                  {streamStatus === 'idle' ? 'Run a search to see agent steps' : 'Waiting for first node...'}
+                </p>
+              ) : (
+                trace.map((t, i) => (
+                  <div key={i} className="flex items-start gap-2 text-xs">
+                    <span className="text-emerald-500 flex-shrink-0 mt-0.5">✓</span>
+                    <div>
+                      <span className="font-medium text-gray-700">{t.node.replace(/_/g, ' ')}</span>
+                      <span className="text-gray-400 ml-1">— {t.detail}</span>
+                    </div>
                   </div>
-                </div>
-              ))
-            )}
-          </div>
-        </>
-      )}
-    </div>
+                ))
+              )}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Mobile: bottom sheet */}
+      <div
+        className={cn(
+          'md:hidden fixed inset-x-0 bottom-0 bg-white border-t border-gray-200 shadow-2xl transition-all duration-300 z-40 flex flex-col',
+          isOpen ? 'h-72' : 'h-0 overflow-hidden border-t-0'
+        )}
+      >
+        {isOpen && (
+          <>
+            <div className="flex items-center justify-between p-3 border-b">
+              <div>
+                <h3 className="font-bold text-gray-800 text-sm">🧠 Agent Trace</h3>
+                <p className="text-xs text-gray-400">LangGraph execution pipeline</p>
+              </div>
+              <button
+                onClick={onToggle}
+                className="text-gray-400 hover:text-gray-600 p-1 rounded-lg"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-3 space-y-2">
+              {trace.length === 0 ? (
+                <p className="text-xs text-gray-400 text-center py-4">
+                  {streamStatus === 'idle' ? 'Run a search to see agent steps' : 'Waiting for first node...'}
+                </p>
+              ) : (
+                trace.map((t, i) => (
+                  <div key={i} className="flex items-start gap-2 text-sm">
+                    <span className="text-emerald-500 flex-shrink-0 mt-0.5">✓</span>
+                    <div>
+                      <span className="font-medium text-gray-700">{t.node.replace(/_/g, ' ')}</span>
+                      <p className="text-gray-400 text-xs mt-0.5">{t.detail}</p>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </>
+        )}
+      </div>
+    </>
   )
 }

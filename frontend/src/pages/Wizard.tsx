@@ -75,7 +75,7 @@ export function Wizard() {
 
       {/* Step content */}
       <main className="flex-1 flex flex-col items-center justify-center px-4 py-8">
-        <div className="w-full max-w-lg bg-white rounded-3xl border border-gray-100 shadow-sm p-8">
+        <div className="w-full max-w-lg bg-white rounded-3xl border border-gray-100 shadow-sm p-4 sm:p-8">
           {currentStep === 'country' && (
             <CountryStep
               value={preferences.country}

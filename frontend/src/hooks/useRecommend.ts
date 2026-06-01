@@ -20,9 +20,11 @@ export function useRecommend() {
     setRecommendations([])
     setError(null)
 
+    const request_id = crypto.randomUUID()
+
     try {
       await fetchRecommendations(
-        { preferences },
+        { preferences, request_id },
         (raw) => {
           if (raw === '[DONE]') {
             setStatus('done')

@@ -21,12 +21,12 @@ export function Landing() {
           <span className="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
             AI-Powered Car Recommendations
           </span>
-          <h1 className="text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
             Find the perfect car
             <br />
             <span className="text-blue-600">in 2 minutes.</span>
           </h1>
-          <p className="text-xl text-gray-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-xl text-gray-500 max-w-xl mx-auto leading-relaxed">
             Answer 4 quick questions. Our AI agent analyzes{' '}
             <strong className="text-gray-700">40+ cars</strong> and gives you a personalized
             shortlist with detailed reasoning — not just specs.
@@ -43,7 +43,7 @@ export function Landing() {
         <p className="mt-4 text-sm text-gray-400">Free · No signup · 2 min</p>
 
         {/* Features */}
-        <div className="grid grid-cols-3 gap-6 mt-16 w-full max-w-2xl">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-16 w-full max-w-2xl">
           {[
             { icon: '🧠', title: 'Agentic AI', desc: 'LangGraph pipeline filters, scores, then reasons' },
             { icon: '🎯', title: 'Personalized', desc: 'Matches your use case, budget, and priorities' },

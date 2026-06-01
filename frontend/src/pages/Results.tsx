@@ -29,37 +29,37 @@ export function Results() {
   const isLoading = status === 'streaming' || status === 'idle'
 
   return (
-    <div className={cn('min-h-screen bg-gray-50 transition-all duration-300', tracePanelOpen ? 'pr-72' : 'pr-0')}>
+    <div className={cn('min-h-screen bg-gray-50 transition-all duration-300', tracePanelOpen ? 'md:pr-72' : 'pr-0')}>
       {/* Header */}
-      <header className="bg-white border-b px-6 py-4 sticky top-0 z-30">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
+      <header className="bg-white border-b px-4 py-3 sticky top-0 z-30">
+        <div className="max-w-4xl mx-auto flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 min-w-0">
             <button
               onClick={() => navigate('/wizard')}
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              className="text-gray-400 hover:text-gray-600 transition-colors flex-shrink-0 text-sm"
             >
               ← Back
             </button>
-            <div className="flex items-center gap-2">
-              <span className="text-xl">🚗</span>
-              <span className="font-bold text-gray-900">CarMatch</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-lg">🚗</span>
+              <span className="font-bold text-gray-900 text-sm sm:text-base">CarMatch</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 flex-shrink-0">
             {selected.length > 0 && (
               <button
                 onClick={openDrawer}
-                className="bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-blue-700 transition-colors"
+                className="bg-blue-600 text-white text-xs sm:text-sm font-semibold px-2 sm:px-4 py-1.5 sm:py-2 rounded-xl hover:bg-blue-700 transition-colors whitespace-nowrap"
               >
-                Compare {selected.length} Cars ↑
+                Compare {selected.length} ↑
               </button>
             )}
             <button
               onClick={() => setTracePanelOpen((v) => !v)}
-              className="text-sm text-gray-500 border border-gray-200 px-3 py-2 rounded-xl hover:border-blue-300 hover:text-blue-600 transition-colors"
+              className="text-xs sm:text-sm text-gray-500 border border-gray-200 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl hover:border-blue-300 hover:text-blue-600 transition-colors whitespace-nowrap"
             >
-              🧠 Agent Trace
+              🧠 <span className="hidden sm:inline">Agent </span>Trace
             </button>
           </div>
         </div>
@@ -69,17 +69,17 @@ export function Results() {
       <main className="max-w-4xl mx-auto px-4 py-8">
         {/* Status banner */}
         {isLoading && (
-          <div className="mb-8 bg-blue-50 border border-blue-200 rounded-2xl p-6 text-center">
+          <div className="mb-8 bg-blue-50 border border-blue-200 rounded-2xl p-4 sm:p-6 text-center">
             <div className="flex items-center justify-center gap-3 mb-3">
-              <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
-              <span className="font-semibold text-blue-700 text-lg">AI is analyzing cars for you...</span>
+              <div className="w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin flex-shrink-0" />
+              <span className="font-semibold text-blue-700 text-base sm:text-lg">AI is analyzing cars for you...</span>
             </div>
-            <div className="space-y-1">
+            <div className="space-y-1.5">
               {trace.map((t, i) => (
-                <div key={i} className="flex items-center justify-center gap-2 text-sm text-blue-600">
-                  <span className="text-emerald-500">✓</span>
-                  <span>{t.node.replace(/_/g, ' ')}</span>
-                  <span className="text-gray-400">— {t.detail}</span>
+                <div key={i} className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 text-sm text-blue-600 px-2">
+                  <span className="text-emerald-500 flex-shrink-0">✓</span>
+                  <span className="font-medium">{t.node.replace(/_/g, ' ')}</span>
+                  <span className="text-gray-400 text-xs sm:text-sm truncate max-w-[200px] sm:max-w-none">— {t.detail}</span>
                 </div>
               ))}
               {trace.length === 0 && (

@@ -46,6 +46,7 @@ export interface TraceEvent {
 
 export interface RecommendRequest {
   preferences: UserPreferences
+  request_id?: string
 }
 
 export type WizardStep = 'country' | 'budget' | 'use_case' | 'fuel' | 'priorities'

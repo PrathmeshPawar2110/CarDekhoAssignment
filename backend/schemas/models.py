@@ -13,6 +13,7 @@ class UserPreferences(BaseModel):
 
 class RecommendRequest(BaseModel):
     preferences: UserPreferences
+    request_id: Optional[str] = None
 
 
 class CarRecommendationOut(BaseModel):
