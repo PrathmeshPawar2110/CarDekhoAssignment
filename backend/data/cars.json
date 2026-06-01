@@ -20,7 +20,12 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["budget", "city", "fuel_efficient", "first_car"]
+    "tags": [
+      "budget",
+      "city",
+      "fuel_efficient",
+      "first_car"
+    ]
   },
   {
     "id": "maruti-wagon-r-2024",
@@ -43,7 +48,12 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["practical", "city", "tall_boy", "value"]
+    "tags": [
+      "practical",
+      "city",
+      "tall_boy",
+      "value"
+    ]
   },
   {
     "id": "maruti-wagon-r-cng-2024",
@@ -66,7 +76,12 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["cng", "economy", "city", "low_cost_running"]
+    "tags": [
+      "cng",
+      "economy",
+      "city",
+      "low_cost_running"
+    ]
   },
   {
     "id": "maruti-swift-2024",
@@ -89,7 +104,12 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["sporty", "fun", "city", "youth"]
+    "tags": [
+      "sporty",
+      "fun",
+      "city",
+      "youth"
+    ]
   },
   {
     "id": "maruti-dzire-2024",
@@ -112,7 +132,12 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["sedan", "family", "cab_fleet", "fuel_efficient"]
+    "tags": [
+      "sedan",
+      "family",
+      "cab_fleet",
+      "fuel_efficient"
+    ]
   },
   {
     "id": "maruti-ertiga-2024",
@@ -135,7 +160,12 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["7_seater", "family", "mpv", "practical"]
+    "tags": [
+      "7_seater",
+      "family",
+      "mpv",
+      "practical"
+    ]
   },
   {
     "id": "hyundai-grand-i10-nios-2024",
@@ -158,7 +188,12 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["premium_hatch", "features", "city", "stylish"]
+    "tags": [
+      "premium_hatch",
+      "features",
+      "city",
+      "stylish"
+    ]
   },
   {
     "id": "hyundai-i20-2024",
@@ -181,7 +216,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["premium_hatch", "turbo", "sunroof", "youth", "tech"]
+    "tags": [
+      "premium_hatch",
+      "turbo",
+      "sunroof",
+      "youth",
+      "tech"
+    ]
   },
   {
     "id": "hyundai-verna-2024",
@@ -204,7 +245,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["premium_sedan", "turbo", "safety", "highway", "executive"]
+    "tags": [
+      "premium_sedan",
+      "turbo",
+      "safety",
+      "highway",
+      "executive"
+    ]
   },
   {
     "id": "hyundai-creta-2024",
@@ -227,7 +274,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["suv", "family", "premium", "safety", "connected"]
+    "tags": [
+      "suv",
+      "family",
+      "premium",
+      "safety",
+      "connected"
+    ]
   },
   {
     "id": "hyundai-alcazar-2024",
@@ -250,7 +303,12 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["7_seater", "premium", "family", "suv"]
+    "tags": [
+      "7_seater",
+      "premium",
+      "family",
+      "suv"
+    ]
   },
   {
     "id": "tata-punch-2024",
@@ -273,7 +331,12 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["micro_suv", "safety", "first_car", "compact"]
+    "tags": [
+      "micro_suv",
+      "safety",
+      "first_car",
+      "compact"
+    ]
   },
   {
     "id": "tata-nexon-2024",
@@ -296,7 +359,12 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["safety", "compact_suv", "turbo", "value"]
+    "tags": [
+      "safety",
+      "compact_suv",
+      "turbo",
+      "value"
+    ]
   },
   {
     "id": "tata-nexon-ev-2024",
@@ -319,7 +387,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["electric", "family", "safety", "urban", "tech"]
+    "tags": [
+      "electric",
+      "family",
+      "safety",
+      "urban",
+      "tech"
+    ]
   },
   {
     "id": "tata-harrier-2024",
@@ -342,7 +416,13 @@
     "highway_performance": "excellent",
     "off_road": true,
     "parking_friendly": false,
-    "tags": ["diesel", "premium_suv", "safety", "highway", "muscle"]
+    "tags": [
+      "diesel",
+      "premium_suv",
+      "safety",
+      "highway",
+      "muscle"
+    ]
   },
   {
     "id": "tata-safari-2024",
@@ -365,7 +445,13 @@
     "highway_performance": "excellent",
     "off_road": true,
     "parking_friendly": false,
-    "tags": ["7_seater", "diesel", "premium", "highway", "family"]
+    "tags": [
+      "7_seater",
+      "diesel",
+      "premium",
+      "highway",
+      "family"
+    ]
   },
   {
     "id": "honda-amaze-2024",
@@ -388,7 +474,12 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["sedan", "automatic", "fuel_efficient", "family"]
+    "tags": [
+      "sedan",
+      "automatic",
+      "fuel_efficient",
+      "family"
+    ]
   },
   {
     "id": "honda-city-2024",
@@ -411,7 +502,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["premium_sedan", "automatic", "safety", "highway", "executive"]
+    "tags": [
+      "premium_sedan",
+      "automatic",
+      "safety",
+      "highway",
+      "executive"
+    ]
   },
   {
     "id": "honda-city-hybrid-2024",
@@ -434,7 +531,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["hybrid", "fuel_efficient", "premium_sedan", "eco", "tech"]
+    "tags": [
+      "hybrid",
+      "fuel_efficient",
+      "premium_sedan",
+      "eco",
+      "tech"
+    ]
   },
   {
     "id": "toyota-glanza-2024",
@@ -457,7 +560,12 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["hatchback", "toyota_reliability", "fuel_efficient", "value"]
+    "tags": [
+      "hatchback",
+      "toyota_reliability",
+      "fuel_efficient",
+      "value"
+    ]
   },
   {
     "id": "toyota-urban-cruiser-hyryder-2024",
@@ -480,7 +588,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["hybrid", "suv", "fuel_efficient", "reliability", "safety"]
+    "tags": [
+      "hybrid",
+      "suv",
+      "fuel_efficient",
+      "reliability",
+      "safety"
+    ]
   },
   {
     "id": "toyota-innova-crysta-2024",
@@ -503,7 +617,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["7_seater", "diesel", "reliability", "family_trips", "highway"]
+    "tags": [
+      "7_seater",
+      "diesel",
+      "reliability",
+      "family_trips",
+      "highway"
+    ]
   },
   {
     "id": "toyota-fortuner-2024",
@@ -526,7 +646,13 @@
     "highway_performance": "excellent",
     "off_road": true,
     "parking_friendly": false,
-    "tags": ["offroad", "premium_suv", "4x4", "highway", "status"]
+    "tags": [
+      "offroad",
+      "premium_suv",
+      "4x4",
+      "highway",
+      "status"
+    ]
   },
   {
     "id": "kia-sonet-2024",
@@ -549,7 +675,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["compact_suv", "turbo", "features", "youth", "tech"]
+    "tags": [
+      "compact_suv",
+      "turbo",
+      "features",
+      "youth",
+      "tech"
+    ]
   },
   {
     "id": "kia-seltos-2024",
@@ -572,7 +704,14 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["premium_suv", "turbo", "safety", "highway", "tech", "sunroof"]
+    "tags": [
+      "premium_suv",
+      "turbo",
+      "safety",
+      "highway",
+      "tech",
+      "sunroof"
+    ]
   },
   {
     "id": "kia-carens-2024",
@@ -595,7 +734,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["7_seater", "premium", "family", "safety", "mpv"]
+    "tags": [
+      "7_seater",
+      "premium",
+      "family",
+      "safety",
+      "mpv"
+    ]
   },
   {
     "id": "mg-hector-2024",
@@ -618,7 +763,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["premium_suv", "large_boot", "connected_car", "family", "tech"]
+    "tags": [
+      "premium_suv",
+      "large_boot",
+      "connected_car",
+      "family",
+      "tech"
+    ]
   },
   {
     "id": "mg-zs-ev-2024",
@@ -641,7 +792,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["electric", "premium_suv", "safety", "tech", "urban"]
+    "tags": [
+      "electric",
+      "premium_suv",
+      "safety",
+      "tech",
+      "urban"
+    ]
   },
   {
     "id": "mahindra-thar-2024",
@@ -664,7 +821,13 @@
     "highway_performance": "moderate",
     "off_road": true,
     "parking_friendly": false,
-    "tags": ["offroad", "4x4", "adventure", "iconic", "youth"]
+    "tags": [
+      "offroad",
+      "4x4",
+      "adventure",
+      "iconic",
+      "youth"
+    ]
   },
   {
     "id": "mahindra-scorpio-n-2024",
@@ -687,7 +850,14 @@
     "highway_performance": "excellent",
     "off_road": true,
     "parking_friendly": false,
-    "tags": ["7_seater", "offroad", "diesel", "4x4", "highway", "muscle"]
+    "tags": [
+      "7_seater",
+      "offroad",
+      "diesel",
+      "4x4",
+      "highway",
+      "muscle"
+    ]
   },
   {
     "id": "mahindra-xuv300-2024",
@@ -710,7 +880,12 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["compact_suv", "safety", "turbo", "features"]
+    "tags": [
+      "compact_suv",
+      "safety",
+      "turbo",
+      "features"
+    ]
   },
   {
     "id": "mahindra-xuv700-2024",
@@ -733,7 +908,14 @@
     "highway_performance": "excellent",
     "off_road": true,
     "parking_friendly": false,
-    "tags": ["7_seater", "premium_suv", "offroad", "safety", "ADAS", "tech"]
+    "tags": [
+      "7_seater",
+      "premium_suv",
+      "offroad",
+      "safety",
+      "ADAS",
+      "tech"
+    ]
   },
   {
     "id": "skoda-kushaq-2024",
@@ -756,7 +938,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["european", "turbo", "safety", "highway", "premium"]
+    "tags": [
+      "european",
+      "turbo",
+      "safety",
+      "highway",
+      "premium"
+    ]
   },
   {
     "id": "skoda-slavia-2024",
@@ -779,7 +967,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["european", "premium_sedan", "turbo", "safety", "highway"]
+    "tags": [
+      "european",
+      "premium_sedan",
+      "turbo",
+      "safety",
+      "highway"
+    ]
   },
   {
     "id": "bmw-3series-2024",
@@ -802,7 +996,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["luxury", "performance", "executive", "highway", "status"]
+    "tags": [
+      "luxury",
+      "performance",
+      "executive",
+      "highway",
+      "status"
+    ]
   },
   {
     "id": "bmw-x1-2024",
@@ -825,7 +1025,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["luxury_suv", "premium", "safety", "highway", "tech"]
+    "tags": [
+      "luxury_suv",
+      "premium",
+      "safety",
+      "highway",
+      "tech"
+    ]
   },
   {
     "id": "maruti-baleno-2024",
@@ -848,7 +1054,12 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["premium_hatch", "turbo", "fuel_efficient", "features"]
+    "tags": [
+      "premium_hatch",
+      "turbo",
+      "fuel_efficient",
+      "features"
+    ]
   },
   {
     "id": "hyundai-exter-2024",
@@ -871,7 +1082,13 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["micro_suv", "features", "automatic", "urban", "value"]
+    "tags": [
+      "micro_suv",
+      "features",
+      "automatic",
+      "urban",
+      "value"
+    ]
   },
   {
     "id": "tata-tiago-ev-2024",
@@ -894,7 +1111,13 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["electric", "affordable_ev", "city", "eco", "first_ev"]
+    "tags": [
+      "electric",
+      "affordable_ev",
+      "city",
+      "eco",
+      "first_ev"
+    ]
   },
   {
     "id": "mahindra-be6-2024",
@@ -917,7 +1140,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["electric", "performance_ev", "premium", "safety", "long_range"]
+    "tags": [
+      "electric",
+      "performance_ev",
+      "premium",
+      "safety",
+      "long_range"
+    ]
   },
   {
     "id": "kia-ev6-2024",
@@ -940,7 +1169,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["luxury_ev", "performance", "highway", "premium", "tech"]
+    "tags": [
+      "luxury_ev",
+      "performance",
+      "highway",
+      "premium",
+      "tech"
+    ]
   },
   {
     "id": "maruti-grand-vitara-hybrid-2024",
@@ -963,7 +1198,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["hybrid", "suv", "fuel_efficient", "maruti_reliability", "safety"]
+    "tags": [
+      "hybrid",
+      "suv",
+      "fuel_efficient",
+      "maruti_reliability",
+      "safety"
+    ]
   },
   {
     "id": "toyota-camry-hybrid-2024",
@@ -986,7 +1227,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["hybrid", "luxury_sedan", "premium", "executive", "reliability"]
+    "tags": [
+      "hybrid",
+      "luxury_sedan",
+      "premium",
+      "executive",
+      "reliability"
+    ]
   },
   {
     "id": "maruti-fronx-2024",
@@ -1009,7 +1256,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["compact_suv", "turbo", "fuel_efficient", "youth", "stylish"]
+    "tags": [
+      "compact_suv",
+      "turbo",
+      "fuel_efficient",
+      "youth",
+      "stylish"
+    ]
   },
   {
     "id": "maruti-jimny-2024",
@@ -1032,7 +1285,14 @@
     "highway_performance": "moderate",
     "off_road": true,
     "parking_friendly": true,
-    "tags": ["offroad", "4x4", "adventure", "iconic", "compact", "weekend"]
+    "tags": [
+      "offroad",
+      "4x4",
+      "adventure",
+      "iconic",
+      "compact",
+      "weekend"
+    ]
   },
   {
     "id": "honda-elevate-2024",
@@ -1055,7 +1315,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["compact_suv", "safety", "automatic", "family", "premium"]
+    "tags": [
+      "compact_suv",
+      "safety",
+      "automatic",
+      "family",
+      "premium"
+    ]
   },
   {
     "id": "hyundai-tucson-2024",
@@ -1078,7 +1344,13 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["premium_suv", "safety", "large_boot", "highway", "luxury"]
+    "tags": [
+      "premium_suv",
+      "safety",
+      "large_boot",
+      "highway",
+      "luxury"
+    ]
   },
   {
     "id": "hyundai-ioniq5-2024",
@@ -1101,7 +1373,14 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["luxury_ev", "performance", "long_range", "premium", "tech", "fast_charging"]
+    "tags": [
+      "luxury_ev",
+      "performance",
+      "long_range",
+      "premium",
+      "tech",
+      "fast_charging"
+    ]
   },
   {
     "id": "tata-curvv-ev-2024",
@@ -1124,7 +1403,14 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["electric", "suv_coupe", "safety", "stylish", "long_range", "tech"]
+    "tags": [
+      "electric",
+      "suv_coupe",
+      "safety",
+      "stylish",
+      "long_range",
+      "tech"
+    ]
   },
   {
     "id": "tata-curvv-2024",
@@ -1147,7 +1433,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["suv_coupe", "safety", "turbo", "stylish", "automatic"]
+    "tags": [
+      "suv_coupe",
+      "safety",
+      "turbo",
+      "stylish",
+      "automatic"
+    ]
   },
   {
     "id": "tata-tigor-ev-2024",
@@ -1170,7 +1462,13 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["electric", "affordable_ev", "sedan", "city", "eco"]
+    "tags": [
+      "electric",
+      "affordable_ev",
+      "sedan",
+      "city",
+      "eco"
+    ]
   },
   {
     "id": "renault-kwid-2024",
@@ -1193,7 +1491,13 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["budget", "city", "first_car", "light_weight", "tall_hatch"]
+    "tags": [
+      "budget",
+      "city",
+      "first_car",
+      "light_weight",
+      "tall_hatch"
+    ]
   },
   {
     "id": "renault-kiger-2024",
@@ -1216,7 +1520,13 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["compact_suv", "automatic", "value", "turbo", "large_boot"]
+    "tags": [
+      "compact_suv",
+      "automatic",
+      "value",
+      "turbo",
+      "large_boot"
+    ]
   },
   {
     "id": "nissan-magnite-2024",
@@ -1239,7 +1549,13 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["compact_suv", "value", "turbo", "automatic", "features"]
+    "tags": [
+      "compact_suv",
+      "value",
+      "turbo",
+      "automatic",
+      "features"
+    ]
   },
   {
     "id": "volkswagen-taigun-2024",
@@ -1262,7 +1578,14 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["european", "safety", "turbo", "highway", "premium", "compact_suv"]
+    "tags": [
+      "european",
+      "safety",
+      "turbo",
+      "highway",
+      "premium",
+      "compact_suv"
+    ]
   },
   {
     "id": "volkswagen-virtus-2024",
@@ -1285,7 +1608,14 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["european", "premium_sedan", "safety", "turbo", "highway", "fuel_efficient"]
+    "tags": [
+      "european",
+      "premium_sedan",
+      "safety",
+      "turbo",
+      "highway",
+      "fuel_efficient"
+    ]
   },
   {
     "id": "jeep-compass-2024",
@@ -1308,7 +1638,14 @@
     "highway_performance": "excellent",
     "off_road": true,
     "parking_friendly": true,
-    "tags": ["premium_suv", "4x4", "safety", "highway", "offroad", "american"]
+    "tags": [
+      "premium_suv",
+      "4x4",
+      "safety",
+      "highway",
+      "offroad",
+      "american"
+    ]
   },
   {
     "id": "toyota-taisor-2024",
@@ -1331,7 +1668,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["compact_suv", "turbo", "fuel_efficient", "toyota_reliability", "automatic"]
+    "tags": [
+      "compact_suv",
+      "turbo",
+      "fuel_efficient",
+      "toyota_reliability",
+      "automatic"
+    ]
   },
   {
     "id": "mahindra-xuv3xo-2024",
@@ -1354,7 +1697,14 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["compact_suv", "safety", "turbo", "sunroof", "features", "value"]
+    "tags": [
+      "compact_suv",
+      "safety",
+      "turbo",
+      "sunroof",
+      "features",
+      "value"
+    ]
   },
   {
     "id": "mahindra-scorpio-classic-2024",
@@ -1377,7 +1727,14 @@
     "highway_performance": "good",
     "off_road": true,
     "parking_friendly": false,
-    "tags": ["9_seater", "diesel", "offroad", "muscle", "rugged", "iconic"]
+    "tags": [
+      "9_seater",
+      "diesel",
+      "offroad",
+      "muscle",
+      "rugged",
+      "iconic"
+    ]
   },
   {
     "id": "mahindra-thar-roxx-2024",
@@ -1400,7 +1757,14 @@
     "highway_performance": "good",
     "off_road": true,
     "parking_friendly": false,
-    "tags": ["offroad", "4x4", "5_seater", "safety", "diesel", "adventure"]
+    "tags": [
+      "offroad",
+      "4x4",
+      "5_seater",
+      "safety",
+      "diesel",
+      "adventure"
+    ]
   },
   {
     "id": "mg-windsor-ev-2024",
@@ -1423,7 +1787,14 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["electric", "suv", "large_boot", "safety", "value_ev", "urban"]
+    "tags": [
+      "electric",
+      "suv",
+      "large_boot",
+      "safety",
+      "value_ev",
+      "urban"
+    ]
   },
   {
     "id": "mg-astor-2024",
@@ -1446,7 +1817,13 @@
     "highway_performance": "good",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["suv", "automatic", "connected_car", "ai_features", "tech"]
+    "tags": [
+      "suv",
+      "automatic",
+      "connected_car",
+      "ai_features",
+      "tech"
+    ]
   },
   {
     "id": "kia-carnival-2024",
@@ -1469,7 +1846,14 @@
     "highway_performance": "excellent",
     "off_road": false,
     "parking_friendly": false,
-    "tags": ["luxury_mpv", "7_seater", "diesel", "highway", "captain_seats", "premium"]
+    "tags": [
+      "luxury_mpv",
+      "7_seater",
+      "diesel",
+      "highway",
+      "captain_seats",
+      "premium"
+    ]
   },
   {
     "id": "citroen-c3-2024",
@@ -1492,6 +1876,886 @@
     "highway_performance": "moderate",
     "off_road": false,
     "parking_friendly": true,
-    "tags": ["hatchback", "quirky", "city", "value", "french"]
+    "tags": [
+      "hatchback",
+      "quirky",
+      "city",
+      "value",
+      "french"
+    ]
+  },
+  {
+    "id": "mercedes-a-class-limousine-2024",
+    "make": "Mercedes-Benz",
+    "model": "A-Class Limousine",
+    "variant": "A 200d",
+    "year": 2024,
+    "price_lakh": 44.9,
+    "fuel_type": "diesel",
+    "body_type": "sedan",
+    "mileage_kmpl": 16.7,
+    "range_km": 0,
+    "engine_cc": 1950,
+    "power_bhp": 150,
+    "seating_capacity": 5,
+    "boot_space_litres": 405,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "luxury_sedan",
+      "german",
+      "entry_luxury",
+      "executive",
+      "safety",
+      "compact"
+    ]
+  },
+  {
+    "id": "mercedes-c-class-2024",
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "variant": "C 220d AMG Line",
+    "year": 2024,
+    "price_lakh": 57.0,
+    "fuel_type": "diesel",
+    "body_type": "sedan",
+    "mileage_kmpl": 16.3,
+    "range_km": 0,
+    "engine_cc": 1993,
+    "power_bhp": 200,
+    "seating_capacity": 5,
+    "boot_space_litres": 455,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "luxury_sedan",
+      "german",
+      "status",
+      "executive",
+      "highway",
+      "safety"
+    ]
+  },
+  {
+    "id": "mercedes-e-class-2024",
+    "make": "Mercedes-Benz",
+    "model": "E-Class",
+    "variant": "E 220d AMG Line",
+    "year": 2024,
+    "price_lakh": 78.5,
+    "fuel_type": "diesel",
+    "body_type": "sedan",
+    "mileage_kmpl": 14.5,
+    "range_km": 0,
+    "engine_cc": 1993,
+    "power_bhp": 200,
+    "seating_capacity": 5,
+    "boot_space_litres": 540,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_sedan",
+      "german",
+      "premium",
+      "executive",
+      "status",
+      "ADAS"
+    ]
+  },
+  {
+    "id": "mercedes-gla-2024",
+    "make": "Mercedes-Benz",
+    "model": "GLA",
+    "variant": "GLA 220d 4MATIC",
+    "year": 2024,
+    "price_lakh": 52.5,
+    "fuel_type": "diesel",
+    "body_type": "suv",
+    "mileage_kmpl": 15.6,
+    "range_km": 0,
+    "engine_cc": 1993,
+    "power_bhp": 190,
+    "seating_capacity": 5,
+    "boot_space_litres": 421,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "luxury_suv",
+      "german",
+      "compact",
+      "executive",
+      "safety",
+      "4wd"
+    ]
+  },
+  {
+    "id": "mercedes-glc-2024",
+    "make": "Mercedes-Benz",
+    "model": "GLC",
+    "variant": "GLC 220d 4MATIC",
+    "year": 2024,
+    "price_lakh": 74.9,
+    "fuel_type": "diesel",
+    "body_type": "suv",
+    "mileage_kmpl": 13.8,
+    "range_km": 0,
+    "engine_cc": 1993,
+    "power_bhp": 197,
+    "seating_capacity": 5,
+    "boot_space_litres": 620,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_suv",
+      "german",
+      "premium",
+      "safety",
+      "large_boot",
+      "highway"
+    ]
+  },
+  {
+    "id": "mercedes-eqb-2024",
+    "make": "Mercedes-Benz",
+    "model": "EQB",
+    "variant": "EQB 350 4MATIC",
+    "year": 2024,
+    "price_lakh": 74.5,
+    "fuel_type": "electric",
+    "body_type": "suv",
+    "mileage_kmpl": 0,
+    "range_km": 423,
+    "engine_cc": 0,
+    "power_bhp": 292,
+    "seating_capacity": 5,
+    "boot_space_litres": 495,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "moderate",
+    "resale_value": "low",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_ev",
+      "german",
+      "premium",
+      "safety",
+      "performance",
+      "tech"
+    ]
+  },
+  {
+    "id": "audi-a4-2024",
+    "make": "Audi",
+    "model": "A4",
+    "variant": "45 TFSI Technology",
+    "year": 2024,
+    "price_lakh": 47.59,
+    "fuel_type": "petrol",
+    "body_type": "sedan",
+    "mileage_kmpl": 14.39,
+    "range_km": 0,
+    "engine_cc": 1984,
+    "power_bhp": 190,
+    "seating_capacity": 5,
+    "boot_space_litres": 460,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "luxury_sedan",
+      "german",
+      "quattro",
+      "executive",
+      "sporty",
+      "safety"
+    ]
+  },
+  {
+    "id": "audi-q3-2024",
+    "make": "Audi",
+    "model": "Q3",
+    "variant": "45 TFSI quattro",
+    "year": 2024,
+    "price_lakh": 47.99,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 13.7,
+    "range_km": 0,
+    "engine_cc": 1984,
+    "power_bhp": 230,
+    "seating_capacity": 5,
+    "boot_space_litres": 530,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "luxury_suv",
+      "german",
+      "quattro",
+      "safety",
+      "sporty",
+      "premium"
+    ]
+  },
+  {
+    "id": "audi-q5-2024",
+    "make": "Audi",
+    "model": "Q5",
+    "variant": "45 TFSI quattro Technology",
+    "year": 2024,
+    "price_lakh": 67.51,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 14.0,
+    "range_km": 0,
+    "engine_cc": 1984,
+    "power_bhp": 249,
+    "seating_capacity": 5,
+    "boot_space_litres": 520,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_suv",
+      "german",
+      "quattro",
+      "premium",
+      "highway",
+      "safety",
+      "ADAS"
+    ]
+  },
+  {
+    "id": "audi-e-tron-2024",
+    "make": "Audi",
+    "model": "Q8 e-tron",
+    "variant": "55 quattro",
+    "year": 2024,
+    "price_lakh": 114.9,
+    "fuel_type": "electric",
+    "body_type": "suv",
+    "mileage_kmpl": 0,
+    "range_km": 600,
+    "engine_cc": 0,
+    "power_bhp": 402,
+    "seating_capacity": 5,
+    "boot_space_litres": 569,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "low",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_ev",
+      "german",
+      "performance",
+      "long_range",
+      "status",
+      "premium"
+    ]
+  },
+  {
+    "id": "bmw-5series-2024",
+    "make": "BMW",
+    "model": "5 Series",
+    "variant": "520d M Sport",
+    "year": 2024,
+    "price_lakh": 72.9,
+    "fuel_type": "diesel",
+    "body_type": "sedan",
+    "mileage_kmpl": 15.8,
+    "range_km": 0,
+    "engine_cc": 1995,
+    "power_bhp": 190,
+    "seating_capacity": 5,
+    "boot_space_litres": 530,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_sedan",
+      "german",
+      "executive",
+      "highway",
+      "status",
+      "safety"
+    ]
+  },
+  {
+    "id": "bmw-x3-2024",
+    "make": "BMW",
+    "model": "X3",
+    "variant": "xDrive20d M Sport",
+    "year": 2024,
+    "price_lakh": 72.5,
+    "fuel_type": "diesel",
+    "body_type": "suv",
+    "mileage_kmpl": 16.53,
+    "range_km": 0,
+    "engine_cc": 1995,
+    "power_bhp": 190,
+    "seating_capacity": 5,
+    "boot_space_litres": 550,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_suv",
+      "german",
+      "xdrive",
+      "highway",
+      "premium",
+      "safety"
+    ]
+  },
+  {
+    "id": "bmw-x5-2024",
+    "make": "BMW",
+    "model": "X5",
+    "variant": "xDrive40i M Sport",
+    "year": 2024,
+    "price_lakh": 96.9,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 10.5,
+    "range_km": 0,
+    "engine_cc": 2998,
+    "power_bhp": 340,
+    "seating_capacity": 5,
+    "boot_space_litres": 650,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_suv",
+      "german",
+      "performance",
+      "status",
+      "highway",
+      "large"
+    ]
+  },
+  {
+    "id": "porsche-macan-2024",
+    "make": "Porsche",
+    "model": "Macan",
+    "variant": "Base",
+    "year": 2024,
+    "price_lakh": 88.57,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 12.2,
+    "range_km": 0,
+    "engine_cc": 1984,
+    "power_bhp": 265,
+    "seating_capacity": 5,
+    "boot_space_litres": 488,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "sports_suv",
+      "german",
+      "performance",
+      "luxury",
+      "status",
+      "driver_car"
+    ]
+  },
+  {
+    "id": "porsche-cayenne-2024",
+    "make": "Porsche",
+    "model": "Cayenne",
+    "variant": "Base Petrol",
+    "year": 2024,
+    "price_lakh": 153.42,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 11.08,
+    "range_km": 0,
+    "engine_cc": 2894,
+    "power_bhp": 340,
+    "seating_capacity": 5,
+    "boot_space_litres": 770,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "ultra_luxury",
+      "german",
+      "performance",
+      "status",
+      "highway",
+      "sports_suv"
+    ]
+  },
+  {
+    "id": "alfa-romeo-stelvio-2024",
+    "make": "Alfa Romeo",
+    "model": "Stelvio",
+    "variant": "Veloce Q4",
+    "year": 2024,
+    "price_lakh": 72.9,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 13.2,
+    "range_km": 0,
+    "engine_cc": 1995,
+    "power_bhp": 280,
+    "seating_capacity": 5,
+    "boot_space_litres": 525,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "low",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "italian",
+      "sports_suv",
+      "performance",
+      "stylish",
+      "driver_car",
+      "luxury"
+    ]
+  },
+  {
+    "id": "alfa-romeo-tonale-2024",
+    "make": "Alfa Romeo",
+    "model": "Tonale",
+    "variant": "Ti PHEV Q4",
+    "year": 2024,
+    "price_lakh": 52.0,
+    "fuel_type": "hybrid",
+    "body_type": "suv",
+    "mileage_kmpl": 26.97,
+    "range_km": 0,
+    "engine_cc": 1332,
+    "power_bhp": 275,
+    "seating_capacity": 5,
+    "boot_space_litres": 500,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "low",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "italian",
+      "hybrid",
+      "sporty",
+      "stylish",
+      "compact_suv",
+      "plug_in"
+    ]
+  },
+  {
+    "id": "lamborghini-urus-2024",
+    "make": "Lamborghini",
+    "model": "Urus S",
+    "variant": "S",
+    "year": 2024,
+    "price_lakh": 430.0,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 8.5,
+    "range_km": 0,
+    "engine_cc": 3996,
+    "power_bhp": 666,
+    "seating_capacity": 5,
+    "boot_space_litres": 616,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "high",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "ultra_luxury",
+      "italian",
+      "supercar_suv",
+      "status",
+      "performance",
+      "exotic"
+    ]
+  },
+  {
+    "id": "maserati-ghibli-2024",
+    "make": "Maserati",
+    "model": "Ghibli",
+    "variant": "Modena Q4",
+    "year": 2024,
+    "price_lakh": 125.77,
+    "fuel_type": "petrol",
+    "body_type": "sedan",
+    "mileage_kmpl": 10.5,
+    "range_km": 0,
+    "engine_cc": 2979,
+    "power_bhp": 430,
+    "seating_capacity": 5,
+    "boot_space_litres": 500,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "low",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "ultra_luxury",
+      "italian",
+      "performance_sedan",
+      "exotic",
+      "status",
+      "driver_car"
+    ]
+  },
+  {
+    "id": "maserati-levante-2024",
+    "make": "Maserati",
+    "model": "Levante",
+    "variant": "Modena",
+    "year": 2024,
+    "price_lakh": 149.95,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 9.8,
+    "range_km": 0,
+    "engine_cc": 2979,
+    "power_bhp": 430,
+    "seating_capacity": 5,
+    "boot_space_litres": 580,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "low",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "ultra_luxury",
+      "italian",
+      "exotic_suv",
+      "status",
+      "performance",
+      "rare"
+    ]
+  },
+  {
+    "id": "volvo-xc40-2024",
+    "make": "Volvo",
+    "model": "XC40",
+    "variant": "Recharge Pure Electric",
+    "year": 2024,
+    "price_lakh": 56.9,
+    "fuel_type": "electric",
+    "body_type": "suv",
+    "mileage_kmpl": 0,
+    "range_km": 418,
+    "engine_cc": 0,
+    "power_bhp": 231,
+    "seating_capacity": 5,
+    "boot_space_litres": 419,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "moderate",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "luxury_ev",
+      "swedish",
+      "safety",
+      "premium",
+      "compact_suv",
+      "eco"
+    ]
+  },
+  {
+    "id": "volvo-xc60-2024",
+    "make": "Volvo",
+    "model": "XC60",
+    "variant": "B5 AWD Ultimate",
+    "year": 2024,
+    "price_lakh": 68.4,
+    "fuel_type": "hybrid",
+    "body_type": "suv",
+    "mileage_kmpl": 17.5,
+    "range_km": 0,
+    "engine_cc": 1969,
+    "power_bhp": 250,
+    "seating_capacity": 5,
+    "boot_space_litres": 529,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "moderate",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_suv",
+      "swedish",
+      "safety",
+      "hybrid",
+      "highway",
+      "premium"
+    ]
+  },
+  {
+    "id": "volvo-xc90-2024",
+    "make": "Volvo",
+    "model": "XC90",
+    "variant": "B6 AWD Ultimate",
+    "year": 2024,
+    "price_lakh": 104.9,
+    "fuel_type": "hybrid",
+    "body_type": "suv",
+    "mileage_kmpl": 15.0,
+    "range_km": 0,
+    "engine_cc": 1969,
+    "power_bhp": 300,
+    "seating_capacity": 7,
+    "boot_space_litres": 721,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_suv",
+      "swedish",
+      "7_seater",
+      "safety",
+      "hybrid",
+      "family",
+      "premium"
+    ]
+  },
+  {
+    "id": "land-rover-defender-2024",
+    "make": "Land Rover",
+    "model": "Defender 110",
+    "variant": "S Petrol",
+    "year": 2024,
+    "price_lakh": 101.5,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 9.7,
+    "range_km": 0,
+    "engine_cc": 1997,
+    "power_bhp": 300,
+    "seating_capacity": 5,
+    "boot_space_litres": 1031,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "high",
+    "highway_performance": "excellent",
+    "off_road": true,
+    "parking_friendly": false,
+    "tags": [
+      "offroad",
+      "british",
+      "4x4",
+      "adventure",
+      "luxury",
+      "iconic",
+      "status"
+    ]
+  },
+  {
+    "id": "range-rover-evoque-2024",
+    "make": "Land Rover",
+    "model": "Range Rover Evoque",
+    "variant": "R-Dynamic S",
+    "year": 2024,
+    "price_lakh": 67.9,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 12.3,
+    "range_km": 0,
+    "engine_cc": 1997,
+    "power_bhp": 249,
+    "seating_capacity": 5,
+    "boot_space_litres": 591,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": true,
+    "parking_friendly": true,
+    "tags": [
+      "luxury_suv",
+      "british",
+      "stylish",
+      "premium",
+      "compact",
+      "status"
+    ]
+  },
+  {
+    "id": "land-rover-discovery-sport-2024",
+    "make": "Land Rover",
+    "model": "Discovery Sport",
+    "variant": "S Petrol",
+    "year": 2024,
+    "price_lakh": 72.29,
+    "fuel_type": "petrol",
+    "body_type": "suv",
+    "mileage_kmpl": 11.5,
+    "range_km": 0,
+    "engine_cc": 1997,
+    "power_bhp": 249,
+    "seating_capacity": 7,
+    "boot_space_litres": 895,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": true,
+    "parking_friendly": false,
+    "tags": [
+      "luxury_suv",
+      "british",
+      "7_seater",
+      "offroad",
+      "family",
+      "premium"
+    ]
+  },
+  {
+    "id": "lexus-es300h-2024",
+    "make": "Lexus",
+    "model": "ES 300h",
+    "variant": "Luxury",
+    "year": 2024,
+    "price_lakh": 64.9,
+    "fuel_type": "hybrid",
+    "body_type": "sedan",
+    "mileage_kmpl": 22.0,
+    "range_km": 0,
+    "engine_cc": 2487,
+    "power_bhp": 218,
+    "seating_capacity": 5,
+    "boot_space_litres": 454,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "moderate",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "luxury_sedan",
+      "japanese",
+      "hybrid",
+      "fuel_efficient",
+      "premium",
+      "executive",
+      "reliability"
+    ]
+  },
+  {
+    "id": "lexus-nx350h-2024",
+    "make": "Lexus",
+    "model": "NX 350h",
+    "variant": "Luxury",
+    "year": 2024,
+    "price_lakh": 70.5,
+    "fuel_type": "hybrid",
+    "body_type": "suv",
+    "mileage_kmpl": 19.17,
+    "range_km": 0,
+    "engine_cc": 2487,
+    "power_bhp": 244,
+    "seating_capacity": 5,
+    "boot_space_litres": 520,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "moderate",
+    "resale_value": "moderate",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "luxury_suv",
+      "japanese",
+      "hybrid",
+      "fuel_efficient",
+      "premium",
+      "safety"
+    ]
+  },
+  {
+    "id": "bmw-ix1-2024",
+    "make": "BMW",
+    "model": "iX1",
+    "variant": "xDrive30 M Sport",
+    "year": 2024,
+    "price_lakh": 66.9,
+    "fuel_type": "electric",
+    "body_type": "suv",
+    "mileage_kmpl": 0,
+    "range_km": 440,
+    "engine_cc": 0,
+    "power_bhp": 313,
+    "seating_capacity": 5,
+    "boot_space_litres": 490,
+    "safety_rating_stars": 5,
+    "maintenance_cost": "high",
+    "resale_value": "low",
+    "highway_performance": "excellent",
+    "off_road": false,
+    "parking_friendly": true,
+    "tags": [
+      "luxury_ev",
+      "german",
+      "performance",
+      "safety",
+      "compact_suv",
+      "xdrive"
+    ]
   }
 ]
