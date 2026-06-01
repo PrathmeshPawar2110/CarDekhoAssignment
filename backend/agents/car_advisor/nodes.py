@@ -262,15 +262,69 @@ async def fetch_car_specs(state: AgentState) -> AgentState:
     return {**state, "car_candidates": enriched, "trace": trace}
 
 
-def enrich_from_local(state: AgentState) -> AgentState:
-    """Fill null specs on extracted candidates using local cars.json data."""
-    candidates: list[dict] = state.get("car_candidates", [])
-    if not candidates:
-        return state
+def _filter_local_cars(prefs: "UserPreferences", local_cars: list[dict]) -> list[dict]:
+    """Filter local DB by user preferences — used as fallback when web search yields nothing."""
+    fuel = prefs.fuel_preference.lower()
+    results = []
+    for car in local_cars:
+        car_fuel = car.get("fuel_type", "").lower()
+        if fuel != "any" and car_fuel != fuel:
+            continue
+        # Budget filter only applies to India (prices stored in ₹ lakh)
+        if prefs.country == "IN":
+            price = car.get("price_lakh", 0)
+            if not (prefs.budget_min <= price <= prefs.budget_max):
+                continue
+        results.append(car)
+    # Boost cars whose tags overlap with user's use-cases
+    use_tags = {u.lower().replace(" ", "_") for u in prefs.use_cases}
+    results.sort(key=lambda c: -len(use_tags & set(c.get("tags", []))))
+    return results[:10]
 
+
+def _local_car_to_candidate(car: dict) -> dict:
+    """Convert a cars.json entry to the candidate dict shape expected by downstream nodes."""
+    return {
+        "car_id": car.get("id", ""),
+        "make": car.get("make", ""),
+        "model": car.get("model", ""),
+        "year": car.get("year", 2024),
+        "variant": car.get("variant", ""),
+        "fuel_type": car.get("fuel_type", ""),
+        "body_type": car.get("body_type", ""),
+        "price": car.get("price_lakh", 0),
+        "mileage_kmpl": car.get("mileage_kmpl"),
+        "power_bhp": car.get("power_bhp"),
+        "seating_capacity": car.get("seating_capacity"),
+        "safety_rating_stars": car.get("safety_rating_stars"),
+        "range_km": car.get("range_km"),
+        "engine_cc": car.get("engine_cc"),
+        "boot_space_litres": car.get("boot_space_litres"),
+        "maintenance_cost": car.get("maintenance_cost", ""),
+        "resale_value": car.get("resale_value", ""),
+        "tags": car.get("tags", []),
+    }
+
+
+def enrich_from_local(state: AgentState) -> AgentState:
+    """Fill null specs using local cars.json. If web search returned no candidates, build them directly from local DB."""
+    candidates: list[dict] = state.get("car_candidates", [])
     local_cars = _load_local_cars()
     SPEC_FIELDS = ["mileage_kmpl", "power_bhp", "seating_capacity", "safety_rating_stars", "range_km"]
+    trace = list(state.get("trace", []))
 
+    # ── Fallback path: no web results → serve matching local cars directly ──
+    if not candidates and local_cars:
+        prefs: UserPreferences = state["preferences"]
+        matched_local = _filter_local_cars(prefs, local_cars)
+        candidates = [_local_car_to_candidate(c) for c in matched_local]
+        trace.append(_trace_entry(
+            "enrich_from_local", "done",
+            f"No web results — loaded {len(candidates)} cars from local DB matching your criteria"
+        ))
+        return {**state, "car_candidates": candidates, "trace": trace}
+
+    # ── Normal path: fill null spec fields from local DB ──
     enriched = []
     for car in candidates:
         match = _find_local_match(car.get("make", ""), car.get("model", ""), local_cars)
@@ -280,12 +334,11 @@ def enrich_from_local(state: AgentState) -> AgentState:
                     car = {**car, field: match[field]}
         enriched.append(car)
 
-    trace = list(state.get("trace", []))
-    matched = sum(
+    matched_count = sum(
         1 for c in enriched
         if _find_local_match(c.get("make", ""), c.get("model", ""), local_cars) is not None
     )
-    trace.append(_trace_entry("enrich_from_local", "done", f"Enriched specs for {matched}/{len(enriched)} cars from local DB"))
+    trace.append(_trace_entry("enrich_from_local", "done", f"Enriched specs for {matched_count}/{len(enriched)} cars from local DB"))
     return {**state, "car_candidates": enriched, "trace": trace}
 
 
